@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: react-app
+  labels: 
+    app: react-app
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 1
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: react-app
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: react-app
     spec:
       containers:
-      - name: {{ .Release.Name }}
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+      - name: react-app
+        image: {{.Values.appimage}}
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: vproapp-port
+          containerPort: 3000
+      
