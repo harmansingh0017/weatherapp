@@ -1,0 +1,8 @@
+image:
+  repository: harmans497/react-app 
+  tag: v1.0
+  pullPolicy: IfNotPresent
+service:
+  port: 80
+  type: ClusterIP
+replicas: 2
