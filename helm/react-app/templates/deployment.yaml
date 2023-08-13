@@ -1,20 +1,23 @@
-Version: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-          name: {{ .Release.Name }}
-          spec:
-                    replicas: {{ .Values.replicas }}
-                      selector:
-                                  matchLabels:
-                                                app: {{ .Release.Name }}
-                                                  template:
-                                                              metadata:
-                                                                            labels:
-                                                                                            app: {{ .Release.Name }}
-                                                                                                spec:
-                                                                                                              containers:
-                                                                                                                            - name: {{ .Release.Name }}
-                                                                                                                                      image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-                                                                                                                                              ports:
-                                                                                                                                                              - containerPort: {{ .Values.service.port }}
-
+  name: react-app
+  labels: 
+    app: react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app
+        image: {{.Values.appimage}}
+        ports:
+        - name: react-app-port
+          containerPort: 8080
+   
