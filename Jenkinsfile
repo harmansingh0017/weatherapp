@@ -50,7 +50,7 @@ pipeline {
         stage('Kubernetes Deploy') {
           agent {label 'KOPS'}
             steps {
-              sh "helm upgrade --install --force react-app helm/react-app --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod"
+              sh "helm upgrade --install --force react-app helm/react-app --set appimage=${registry} --namespace prod"
             }
         }
     }
