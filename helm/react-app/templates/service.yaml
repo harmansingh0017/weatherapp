@@ -4,7 +4,7 @@ metadata:
   name: react-app-service
 spec:
   ports:
-  - port: 9080
+  - port: 80
     targetPort: react-app-port
     protocol: TCP
   selector:
