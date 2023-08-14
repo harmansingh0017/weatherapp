@@ -14,7 +14,7 @@ RUN npm install --progress=false
 COPY . .
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
 # Build the React application
 RUN npm run build
