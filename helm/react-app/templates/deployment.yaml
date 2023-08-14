@@ -19,5 +19,5 @@ spec:
         image: {{.Values.appimage}}
         ports:
         - name: vproapp-port
-          containerPort: 80
+          containerPort: 3000
       
