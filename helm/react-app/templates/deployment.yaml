@@ -18,6 +18,6 @@ spec:
       - name: react-app
         image: {{.Values.appimage}}
         ports:
-        - name: vproapp-port
+        - name: react-app-port
           containerPort: 3000
       
