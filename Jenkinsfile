@@ -24,6 +24,8 @@ pipeline {
 
         stage('Build App Image') {
           steps {
+		sh 'npm install'
+                sh 'npm run build'
             script {
               dockerImage = docker.build registry + ":V$BUILD_NUMBER"
             }
