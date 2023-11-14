@@ -55,6 +55,14 @@ pipeline {
               sh "helm upgrade --install --force react-app helm/react-app --set appimage=${registry}:V${BUILD_NUMBER} --namespace prod"
             }
         }
+
+	stage('Prometheus & Grafana Deploy') {
+          agent {label 'KOPS'}
+            steps {
+              sh "helm repo add prometheus-community https://prometheus-community.github.io/helm-charts"
+	      sh "helm install stable prometheus-community/kube-prometheus-stack -n prometheus"
+            }
+        }
     }
 
 
