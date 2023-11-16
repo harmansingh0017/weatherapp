@@ -40,7 +40,7 @@ Ensure the following prerequisites are met before setting up and executing the p
    
 3. **Kubernetes (EKS):**
 
-   - Set up an EKS cluster and configure `kubectl`.
+   - Set up an EKS cluster along with S3 bucket to store state of the cluster.
    
 4. **Helm:**
 
