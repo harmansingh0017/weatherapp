@@ -53,6 +53,10 @@ Ensure the following prerequisites are met before setting up and executing the p
 6. **HashiCorp Vault:**
 
    - Implement HashiCorp Vault for storing the dockerhub credentials and accessing it from Jenkins using AppRole credentials.
+
+7. **Prometheus and Grafana:**
+
+   - Adds the Prometheus Helm chart repository and Installs Prometheus and Grafana using Helm in the 'prometheus' namespace.
  
 
  
