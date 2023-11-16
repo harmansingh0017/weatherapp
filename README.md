@@ -26,11 +26,6 @@ The Jenkins pipeline consists of several stages that encompass the following pro
 
    - Deploys the React application to Kubernetes (EKS) using Helm.
    
-5. **Prometheus & Grafana Deploy:**
-
-   - Adds the Prometheus Helm chart repository.
-   - Installs Prometheus and Grafana using Helm in the 'prometheus' namespace.
-   
 ## Prerequisites
 
 Ensure the following prerequisites are met before setting up and executing the pipeline:
